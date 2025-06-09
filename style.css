@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: #799F0C; 
+    background: -webkit-linear-gradient(to right, #ACBB78, #799F0C);  
+    background: linear-gradient(to right, #ACBB78, #799F0C); 
+    
+
+}
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.container{
+    width: 60%;
+    margin: 0 auto;
+}
+
+header{
+    width: 100%;
+    /* padding: 20px 0px; */
+    background-color: rgba(255, 255, 255, 0.281);
+    backdrop-filter: blur(100px);
+    color: white;
+    padding: 40px 0px;
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav h1{
+    font-size: 40px;
+}
+
+nav ul{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li{
+    padding: 10px 30px;
+    background-color: transparent;
+    transition: 0.5s;
+    border-radius: 12px;
+}
+nav ul li:hover{
+    background-color: white;
+    color: #799F0C;
+    transition: 0.5s;
+    border-radius: 12px;
+}
+nav button{
+    display: none;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 481px) {
+    /* bu yerga style yoziladi */
+    .container{
+        width: 80%;
+    }
+    header {
+      background-color: lightblue;
+    }
+    nav ul{
+        display: none;
+    }
+    nav button{
+        display: inline-block;
+    }
+  }
+  
