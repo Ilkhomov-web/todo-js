@@ -5,6 +5,15 @@
     font-family: sans-serif;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
 body{
     background: #799F0C; 
     background: -webkit-linear-gradient(to right, #ACBB78, #799F0C);  
@@ -80,13 +89,48 @@ nav button{
         width: 80%;
     }
     header {
-      background-color: lightblue;
+        background-color: rgba(255, 255, 255, 0.281);
     }
     nav ul{
         display: none;
     }
     nav button{
+        width: 50px;
+        padding: 10px 5px;
         display: inline-block;
+        color: #799F0C;
+        background-color: white;
+        border: none;
+        border-radius: 12px;
     }
+    .mobile-bar{
+        width: 350px;
+        height: 100vh;
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        position: absolute;
+        right: 0;
+        top: 0px;
+        padding: 40px;
+        animation-name: mobileMenu;
+        animation-duration: 1.2s;
+
+    }
+    .mobile-bar button{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+  }
+
+
+
+
+  @keyframes mobileMenu{
+    from{background-color: red;
+    right: -300px;}
+    to{background-color: yellow;}
   }
   
