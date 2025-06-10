@@ -37,7 +37,40 @@
         </nav>
       </div>
     </header>
-    <main></main>
+    <main>
+      <div class="container">
+        <div class="layout-box">
+          <form>
+            <div class="input-box">
+              <label for="work">Vasifa Nomi</label>
+              <input type="text" id="taskName" />
+            </div>
+            <div class="input-box">
+              <label for="work">Vazifa Ta'snifi</label>
+              <input type="text" id="taskDescription" />
+            </div>
+            <div class="input-box">
+              <label for="work">Work</label>
+              <input type="time" id="taskTime" />
+            </div>
+            <div class="input-box">
+              <label for="work">Qanchalik muhim</label>
+              <select name="" id="taskImportance">
+                <option value="standart">Har doimgidek</option>
+                <option value="juda">Juda</option>
+                <option value="birMarta">Bir Marotaba Eslat</option>
+              </select>
+            </div>
+            <button onclick="sendTask()">Bajarish</button>
+          </form>
+          <div class="layout-cards">
+            <div class="layout-card">
+              <h3>#1</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer></footer>
     <script src="index.js"></script>
   </body>
