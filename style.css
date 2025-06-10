@@ -94,19 +94,7 @@ form{
     flex-direction: column;
     gap: 20px;
 }
-.layout-cards{
-    width: 38%;
-    border-radius: 15px;
-    padding: 20px;
-    background-color: white;
-}
-.layout-card{
-    width: 100%;
-    background-color: #799F0C;
-    padding: 20px;
-    border-radius: 15px;
-    color: white;
-}
+
 form label{
     font-size: 18px;
     font-family: cursive ;
@@ -150,7 +138,71 @@ form select{
     border: none;
     outline: none;
 }
-
+.layout-cards{
+    width: 38%;
+    height: 390px ;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: auto;
+}
+.layout-cards::-webkit-scrollbar{
+    width: 1px; 
+}
+.layout-card{
+    width: 100%;
+    background-color: #799F0C;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    position: relative;
+}
+.desc{
+    width: 250px;
+    margin-bottom: 10px;
+}
+.status{
+    position: absolute;
+    right: 20px;
+    background-color: blue;
+    padding: 8px;
+    background-color: white;
+    color: red;
+    border-radius: 3px;
+    top: 20px;
+}
+.time{
+    position: absolute;
+    right: 20px;
+    background-color: blue;
+    padding: 5px;
+    background-color: white;
+    color: red;
+    border-radius: 3px;
+    bottom: 20px;
+}
+.comp{
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    color: #799F0C;
+    border-radius: 8px;
+    
+}
+.del{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    color: red;
+    border-radius: 8px;
+}
 
 
 
