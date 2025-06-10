@@ -16,8 +16,8 @@
         <nav>
           <h1>Todo</h1>
 
-          <ul class="mobile-bar">
-            <button>X</button>
+          <ul class="mobile-bar" id="mobile-bar">
+            <button onclick="closeMenu()">X</button>
             <a href="#">
               <li>Home</li>
             </a>
@@ -31,7 +31,9 @@
               <li>GitHub</li>
             </a>
           </ul>
-          <button><span class="material-symbols-outlined"> menu </span></button>
+          <button onclick="openMenu()">
+            <span class="material-symbols-outlined"> menu </span>
+          </button>
         </nav>
       </div>
     </header>

@@ -103,34 +103,41 @@ nav button{
         border: none;
         border-radius: 12px;
     }
-    .mobile-bar{
+    .mobile-bar {
         width: 350px;
         height: 100vh;
-        background-color: red;
+        background: #799F0C;
         display: flex;
         flex-direction: column;
         justify-content: start;
+        gap: 15px;
         position: absolute;
-        right: 0;
+        right: -400px;
         top: 0px;
         padding: 40px;
-        animation-name: mobileMenu;
-        animation-duration: 1.2s;
-
-    }
-    .mobile-bar button{
+        transition: right 0.7s ease; /* Faqat transition ishlatildi */
+      }
+    .mobile-bar.active {
+        right: 0;
+      }
+      .mobile-bar button {
+        width: 40px;
         position: absolute;
         top: 20px;
         left: 20px;
-    }
+        font-size: 24px;
+        cursor: pointer;
+        padding: 5px;
+      }
   }
 
 
 
 
   @keyframes mobileMenu{
-    from{background-color: red;
-    right: -300px;}
-    to{background-color: yellow;}
+    0%{ background: #799F0C;
+        right: -300px;}
+    100%{ background: #799F0C;
+    }
   }
   
