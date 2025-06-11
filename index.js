@@ -8,7 +8,7 @@ function closeMenu(){
 }
 
 
-//send tasks
+
 
 const taskName = document.getElementById('taskName');
 const taskDescription = document.getElementById('taskDescription');
@@ -17,7 +17,7 @@ const taskImportance = document.getElementById('taskImportance');
 const layoutCards = document.getElementById('layout-cards');
 const layoutCard = document.getElementById('layout-card');
 
-
+//send tasks
 
 let tasks = JSON.parse(localStorage.getItem('task')) || [];
 const taskRandomId =  Math.random().toString(36).substr(2, 8);
@@ -41,19 +41,16 @@ localStorage.setItem('task', JSON.stringify(tasks))
     location.reload()
     
 }
-console.log(tasks);
 
 function taskDelete(id) {
-  // DOM elementini topish
   const element = document.querySelector(`.layout-card[data-id='${id}']`);
   if (element) {
-    element.remove(); // DOMdan o‘chirish
+    element.remove(); 
   }
   tasks = tasks.filter(task => task.id !== id);
   localStorage.setItem('task', JSON.stringify(tasks));
   location.reload()
 }
-
 tasks.map((item) => {
   layoutCards.innerHTML += `
     <div class="layout-card" data-id="${item.id}">
@@ -63,7 +60,7 @@ tasks.map((item) => {
       <p class="status">${item.taskImportance}</p>
       <p class="time">${item.taskTime}</p>
       <div class="btnGroup">
-        <button class="comp" onclick="taskComplete()">
+        <button class="comp" onclick="taskComplete('${item.id}')">
           <span class="material-symbols-outlined"> task_alt </span>
         </button>
         <button class="del" onclick="taskDelete('${item.id}')">
@@ -73,3 +70,13 @@ tasks.map((item) => {
     </div>`;
 });
 
+
+//complete task
+function taskComplete(id){
+  const element = document.querySelector(`.layout-card[data-id='${id}']`);
+  if(element){
+    element.classList.add('compCard')
+  }
+  console.log('task id:', id, element);
+  
+}

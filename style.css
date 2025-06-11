@@ -160,6 +160,9 @@ form select{
     color: white;
     position: relative;
 }
+.compCard{
+    background: gray;
+}
 .desc{
     width: 250px;
     margin-bottom: 10px;
