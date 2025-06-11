@@ -19,7 +19,7 @@ const layoutCard = document.getElementById('layout-card');
 
 
 
-const tasks = JSON.parse(localStorage.getItem('task')) || [];
+let tasks = JSON.parse(localStorage.getItem('task')) || [];
 const taskRandomId =  Math.random().toString(36).substr(2, 8);
 
 function sendTask(){
@@ -43,38 +43,33 @@ localStorage.setItem('task', JSON.stringify(tasks))
 }
 console.log(tasks);
 
-function taskDelete(id){
-    for(let i = 0; i < tasks.length; i++){
-        if (tasks[i].id = id ) {
-            layoutCard.style.display = 'none'
-            
-        }
-        
-    }
-    
+function taskDelete(id) {
+  // DOM elementini topish
+  const element = document.querySelector(`.layout-card[data-id='${id}']`);
+  if (element) {
+    element.remove(); // DOMdan o‘chirish
+  }
+  tasks = tasks.filter(task => task.id !== id);
+  localStorage.setItem('task', JSON.stringify(tasks));
+  location.reload()
 }
 
-
-
-
-tasks.map((item)=>{
-    layoutCards.innerHTML += `
-    <div class="layout-card" id="layout-card">
-              <h3>#1 ${item.taskName}</h3>
-              <p class="desc">
-                ${item.taskDescription}
-              </p>
-              <p class="status">${item.taskImportance
-              }</p>
-              <p class="time">${item.taskTime}</p>
-              <div class="btnGroup">
-                <button class="comp" onclick="taskComplete()">
-                  <span class="material-symbols-outlined"> task_alt </span>
-                </button>
-                <button class="del" onclick="taskDelete('${item.id}')">
-                  <span class="material-symbols-outlined">delete</span>
-                </button>
-              </div>
-            </div>`
-})
+tasks.map((item) => {
+  layoutCards.innerHTML += `
+    <div class="layout-card" data-id="${item.id}">
+      <p>Id:${item.id}</p>
+      <h3>${item.taskName}</h3>
+      <p class="desc">${item.taskDescription}</p>
+      <p class="status">${item.taskImportance}</p>
+      <p class="time">${item.taskTime}</p>
+      <div class="btnGroup">
+        <button class="comp" onclick="taskComplete()">
+          <span class="material-symbols-outlined"> task_alt </span>
+        </button>
+        <button class="del" onclick="taskDelete('${item.id}')">
+          <span class="material-symbols-outlined">delete</span>
+        </button>
+      </div>
+    </div>`;
+});
 
