@@ -161,7 +161,12 @@ form select{
     position: relative;
 }
 .compCard{
-    background: gray;
+    background: rgba(90, 90, 90, 0.856);
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    position: relative;
 }
 .desc{
     width: 250px;
@@ -260,6 +265,24 @@ form select{
         font-size: 24px;
         cursor: pointer;
         padding: 5px;
+      }
+      .layout-box{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      form{
+        width: 100%;
+      }
+      .layout-cards{
+        width: 100%;
+      }
+      .layout-card{
+        width: 100%;
       }
   }
 
